@@ -1,0 +1,24 @@
+.bold {
+ font-weight: bold;
+}
+.italic {
+ font-style: italic;
+}
+
+:link{
+  color: rgb(37, 37, 41);
+  text-decoration: none;
+}
+
+a:visited {
+  color: blueviolet;
+}
+
+a:hover {
+  color: blue;
+  text-decoration: underline;
+}
+
+a:active{
+  color: rgb(195, 30, 30);
+}

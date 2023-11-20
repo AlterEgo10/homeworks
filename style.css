@@ -1,0 +1,29 @@
+p {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 130%;
+}
+
+.footer_text {
+  color: rgb(83, 86, 88);
+}
+
+/* .reviews_link {
+  color: rgb(37, 37, 41);
+  text-decoration: none;
+} */
+/* :link{
+  color: rgb(37, 37, 41);
+  text-decoration: none;
+}
+
+a:visited {
+  color: blueviolet;
+}
+
+a:hover {
+  color: blue;
+}
+
+a:active{
+  color: rgb(195, 30, 30);
+} */
