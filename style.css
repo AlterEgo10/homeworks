@@ -1,0 +1,45 @@
+p {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 130%;
+}
+
+.menu li {
+display: inline;
+padding-left: 15px;
+font-size: 1.6em;
+}
+
+.menu_link a:link{
+  
+  color:rgba(26, 21, 25, 0.286);
+}
+
+.menu_link a:visited {
+  color:#4806ef ;
+}
+
+.menu_link a:hover{
+  color:rgb(134, 19, 19);
+  text-decoration: none;
+}
+
+.program_lang{
+  font-size: 1.2em; 
+}
+
+.footer_text {
+  color: rgb(83, 86, 88);
+}
+
+.projects1{
+  padding: 10px;
+  margin: 10px;
+  border: 2px solid rgb(63, 61, 61);
+}
+
+.projects2{
+  padding: 10px;
+  margin: 10px;
+
+  border: 2px solid rgb(63, 61, 61);
+}
