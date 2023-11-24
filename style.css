@@ -3,7 +3,6 @@ p {
   font-size: 130%;
 }
 
-<<<<<<< HEAD
 .menu li {
 display: inline;
 padding-left: 15px;
@@ -41,10 +40,8 @@ font-size: 1.6em;
 .projects2{
   padding: 10px;
   margin: 10px;
-
   border: 2px solid rgb(63, 61, 61);
-=======
+}
 .footer_text {
   color: rgb(83, 86, 88);
->>>>>>> 1-html-css-hw1
 }
