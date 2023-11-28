@@ -9,37 +9,69 @@
     <title>Портфолио</title>
   </head>
   <body>
-    <header>
+
+<!-- start header -->
+
+    <header class="header">
+     
       <h1>Сайт портфолио</h1>
+      <div class="header_video">
+      <video
+        class="video"
+        controls
+        loop="loop"
+       autoplay=""
+        
+        muted
+        preload="metadata"
+      >
+        <source
+          src="./video/_import_61b43f4160b2e8.92051030.mp4"
+          type="video/mp4"
+        />
+        <source
+          src="./video/_import_61b43f4160b2e8.92051030.mp4"
+          type="video/webm"
+        />
+      
+        <p>Ваш браузер не поддерживает HTML5 видео.</p>
+      </video>
+    </div>
       <ul class="menu">
         <li class="menu_link"><a href="#">Главная</a></li>
         <li class="menu_link"><a href="#">Отзывы</a></li>
         <li class="menu_link"><a href="#">Контакты</a></li>
       </ul>
+    
     </header>
-    <p>
-      <span class="bold"
-        >Lorem ipsum dolor sit amet consectetur adipisicing elit.</span
-      >
-      Quas a aut facere modi ipsum consequuntur maxime voluptatum eos, iste
-      veritatis doloribus repellendus vel molestiae cumque dignissimos quidem,
-      culpa praesentium enim.
-    </p>
-    <p>
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit.<span
-        class="italic"
-      >
-        Quis voluptatibus labore praesentium provident, molestiae perferendis
-        quam beatae mollitia saepe deleniti similique adipisci animi optio ullam
-        eligendi modi laborum odit.</span
-      >
-      Quibusdam.
-    </p>
-    <p class="italic">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, rem
-      praesentium eligendi nostrum quod provident vel, cum laboriosam tempore
-      aperiam libero animi minima ad deleniti tenetur fuga porro! Eaque, eius.
-    </p>
+
+<!-- end header -->
+
+    <div class="blur-image">
+      <p>
+        <span class="bold"
+          >Lorem ipsum dolor sit amet consectetur adipisicing elit.</span
+        >
+        Quas a aut facere modi ipsum consequuntur maxime voluptatum eos, iste
+        veritatis doloribus repellendus vel molestiae cumque dignissimos quidem,
+        culpa praesentium enim.
+      </p>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit.<span
+          class="italic"
+        >
+          Quis voluptatibus labore praesentium provident, molestiae perferendis
+          quam beatae mollitia saepe deleniti similique adipisci animi optio
+          ullam eligendi modi laborum odit.</span
+        >
+        Quibusdam.
+      </p>
+      <p class="italic">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, rem
+        praesentium eligendi nostrum quod provident vel, cum laboriosam tempore
+        aperiam libero animi minima ad deleniti tenetur fuga porro! Eaque, eius.
+      </p>
+    </div>
 
     <h2>Технологии и языки программирования:</h2>
     <ul class="program_lang">
@@ -47,9 +79,31 @@
       <li>CSS</li>
       <li>JavaScript</li>
     </ul>
+    <div class="projects">
+      <div class="projects1">
+        <h3>Сайт визитка</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam
+          quaerat molestiae facilis laudantium ea eaque error deleniti.
+          Voluptates quas a excepturi corporis ex aut dignissimos ut autem
+          corrupti! Dignissimos, necessitatibus?
+        </p>
+      </div>
+      <div class="projects2">
+        <h3>Книга учета доходов</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. In impedit
+          sapiente eos similique minima qui voluptatem omnis illum possimus
+          praesentium, dolorem, reprehenderit dicta, iure maxime. Atque hic
+          consectetur veniam ratione.
+        </p>
+      </div>
+    </div>
+
     <hr />
-    <p><a href="reviews.html">Отзывы</a></p>
-    <footer>
+
+    <footer class="footer">
+      <p><a href="reviews.html">Отзывы</a></p>
       <p class="footer_text">&copy; Все права защищены. 2023</p>
     </footer>
   </body>
