@@ -3,6 +3,109 @@ p {
   font-size: 130%;
 }
 
+/* start header */
+
+.header{
+  position: relative;
+  min-height: 25vh;
+  width: 100%;
+  height: 50px;
+}
+
+.header_video{
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.header_video:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
+  height: 10%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.header_video .video {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.menu li {
+position: relative;
+z-index: 2;
+display: inline;
+padding-left: 15px;
+font-size: 1.6em;
+
+}
+
+.menu_link a:link{
+  
+  color:rgb(241, 233, 239);
+}
+
+.menu_link a:visited {
+  color:#594b91 ;
+}
+
+.menu_link a:hover{
+  color:rgb(134, 19, 19);
+  text-decoration: none;
+}
+
+
+/* end header */
+
+.blur-image {
+  background-image: url(./img/painted-grey-background-with-metal-texture.jpg);
+  background-size:cover;
+  filter: blur(5px); /* Размытие изображения */
+  transition: 1s; /* Время перехода */
+}
+.blur-image:hover {
+  filter: blur(0); /* Отменяем размытие */
+}
+   
+
+.program_lang{
+  font-size: 1.2em; 
+}
+
+.projects{
+  background-image: url('img/backgroundProjects.jpg');
+  background-size:cover;
+}
+
+.projects1,
+.projects2{
+  padding: 10px;
+  margin: 10px;
+  border: 2px solid rgb(63, 61, 61);
+  color: azure;
+}
+  
+
+.footer{
+  padding-top: 40px;
+  height: 150px;
+  background: rgb(2,0,36);
+background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(214,214,249,1) 35%, rgba(0,212,255,1) 100%);
+}
 .footer_text {
   color: rgb(83, 86, 88);
 }
