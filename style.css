@@ -106,7 +106,6 @@ p {
 .container_program_lang {
   background-image: url("img/backgroundProjects.jpg");
   background-size: cover;
-  
 }
 
 .program_lang_flex {
@@ -140,6 +139,8 @@ p {
   width: 500px;
 }
 
+/* start footer */
+
 .footer {
   padding-left: 30px;
   padding-top: 40px;
@@ -156,10 +157,24 @@ p {
   color: rgb(83, 86, 88);
 }
 
+.icon-calenda {
+  position: absolute;
+  right: 80px;
+  font-size: 1.5rem;
+}
+
+.icon-cont {
+  position: absolute;
+  right: 140px;
+  font-size: 1.5rem;
+}
+
+/* end footer */
+
 .fixed {
   background-color: chartreuse;
   border: 1px solid gray;
-  width: 70px;
+  width: 45px;
   text-align: center;
   padding: 5px;
   position: fixed;
