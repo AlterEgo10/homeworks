@@ -1,6 +1,6 @@
 p {
   font-family: Helvetica, Arial, sans-serif;
-  font-size: 130%;
+  font-size: 1.7rem;
 }
 
 /* start header */
@@ -78,11 +78,8 @@ p {
   margin-top: 0;
 }
 /* end header */
-/* start about  */
 
-/* .about{
-  height: 400px;
-} */
+/* start about  */
 
 .blur-image p {
   padding: 15px;
@@ -91,7 +88,6 @@ p {
 }
 
 .blur-image {
-  height: 400px;
   background-image: url(./img/painted-grey-back.jpg);
   background-size: cover;
   filter: blur(5px); /* Размытие изображения */
@@ -110,7 +106,7 @@ p {
 .container_program_lang {
   background-image: url("img/backgroundProjects.jpg");
   background-size: cover;
-  /* height: 400px; */
+  
 }
 
 .program_lang_flex {
@@ -118,7 +114,7 @@ p {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  height: 400px;
+  /* flex-basis: 500px; */
 }
 
 .container_program_lang h2 {
@@ -126,11 +122,11 @@ p {
   margin: 30px;
   color: azure;
   padding-top: 50px;
-  margin: 0;
+  margin: auto;
 }
 
 .program_lang-item li {
-  font-size: 1.5em;
+  font-size: 1.5rem;
   color: azure;
   padding-bottom: 20px;
 }
@@ -141,7 +137,7 @@ p {
   margin: 10px;
   border: 2px solid rgb(63, 61, 61);
   color: azure;
-  width: 600px;
+  width: 500px;
 }
 
 .footer {
