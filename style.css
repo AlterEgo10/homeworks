@@ -1,18 +1,21 @@
 p {
   font-family: Helvetica, Arial, sans-serif;
-  font-size: 130%;
+  font-size: 1.7rem;
 }
 
 /* start header */
 
-.header{
+.header_flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   position: relative;
   min-height: 25vh;
   width: 100%;
   height: 50px;
 }
 
-.header_video{
+.header_video {
   position: absolute;
   left: 0;
   top: 0;
@@ -45,67 +48,158 @@ p {
   min-height: 100%;
 }
 
-.menu li {
-position: relative;
-z-index: 2;
-display: inline;
-padding-left: 15px;
-font-size: 1.6em;
-
+.menu {
+  position: relative;
+  left: 150px;
 }
 
-.menu_link a:link{
-  
-  color:rgb(241, 233, 239);
+.menu li {
+  position: relative;
+  z-index: 2;
+  display: inline;
+  padding-left: 15px;
+  font-size: 1.6em;
+}
+
+.menu_link a:link {
+  color: rgb(241, 233, 239);
 }
 
 .menu_link a:visited {
-  color:#594b91 ;
+  color: #594b91;
 }
 
-.menu_link a:hover{
-  color:rgb(134, 19, 19);
+.menu_link a:hover {
+  color: rgb(134, 19, 19);
   text-decoration: none;
 }
 
-
+.header p {
+  margin-top: 0;
+}
 /* end header */
 
+/* start about  */
+
+.blur-image p {
+  padding: 15px;
+  width: 400px;
+  border: 2px solid rgb(63, 61, 61);
+}
+
 .blur-image {
-  background-image: url(./img/painted-grey-background-with-metal-texture.jpg);
-  background-size:cover;
+  background-image: url(./img/painted-grey-back.jpg);
+  background-size: cover;
   filter: blur(5px); /* Размытие изображения */
   transition: 1s; /* Время перехода */
 }
 .blur-image:hover {
   filter: blur(0); /* Отменяем размытие */
 }
-   
 
-.program_lang{
-  font-size: 1.2em; 
+.flow-around {
+  float: left;
 }
 
-.projects{
-  background-image: url('img/backgroundProjects.jpg');
-  background-size:cover;
+/* end about */
+
+/* start program_lang */
+.container_program_lang {
+  background-image: url("img/backgroundProjects.jpg");
+  background-size: cover;
+}
+
+.program_lang_flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.container_program_lang h2 {
+  text-align: center;
+  color: azure;
+  padding-top: 50px;
+  margin: auto;
+}
+
+.program_lang-item li {
+  font-size: 1.5rem;
+  color: azure;
+  padding-bottom: 20px;
 }
 
 .projects1,
-.projects2{
+.projects2 {
   padding: 10px;
   margin: 10px;
   border: 2px solid rgb(63, 61, 61);
   color: azure;
+  width: 500px;
 }
-  
+/* end program_lang */
 
-.footer{
+/* start table */
+.table {
+  /* border: 1px black solid; */
+  padding: 10px;
+  border-collapse: collapse;
+}
+.table td,
+table th {
+  border: 1px black solid;
+  padding: 10px;
+}
+/* end table*/
+
+/* start footer */
+
+.footer {
+  padding-left: 30px;
   padding-top: 40px;
   height: 150px;
-  background: rgb(2,0,36);
-background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(214,214,249,1) 35%, rgba(0,212,255,1) 100%);
+  background: rgb(2, 0, 36);
+  background: radial-gradient(
+    circle,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(214, 214, 249, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
 }
 .footer_text {
   color: rgb(83, 86, 88);
+}
+
+.icon-calenda {
+  position: absolute;
+  right: 80px;
+  font-size: 1.5rem;
+}
+
+.icon-cont {
+  position: absolute;
+  right: 140px;
+  font-size: 1.5rem;
+}
+
+/* end footer */
+
+.fixed {
+  background-color: chartreuse;
+  border: 1px solid gray;
+  width: 45px;
+  text-align: center;
+  padding: 5px;
+  position: fixed;
+  right: 10px;
+  bottom: 100px;
+  opacity: 0.6;
+}
+
+.fixed a {
+  display: block;
+}
+
+.fixed:hover {
+  opacity: 1;
 }
