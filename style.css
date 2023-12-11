@@ -141,10 +141,15 @@ p {
 
 /* start table */
 .table {
-  /* border: 1px black solid; */
+  background-color:blanchedalmond;
   padding: 10px;
   border-collapse: collapse;
 }
+
+.table_caption{
+  background-color:cadetblue;
+}
+
 .table td,
 table th {
   border: 1px black solid;
