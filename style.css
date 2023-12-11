@@ -103,6 +103,7 @@ p {
 
 /* end about */
 
+/* start program_lang */
 .container_program_lang {
   background-image: url("img/backgroundProjects.jpg");
   background-size: cover;
@@ -113,12 +114,10 @@ p {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  /* flex-basis: 500px; */
 }
 
 .container_program_lang h2 {
   text-align: center;
-  margin: 30px;
   color: azure;
   padding-top: 50px;
   margin: auto;
@@ -138,6 +137,20 @@ p {
   color: azure;
   width: 500px;
 }
+/* end program_lang */
+
+/* start table */
+.table {
+  /* border: 1px black solid; */
+  padding: 10px;
+  border-collapse: collapse;
+}
+.table td,
+table th {
+  border: 1px black solid;
+  padding: 10px;
+}
+/* end table*/
 
 /* start footer */
 
