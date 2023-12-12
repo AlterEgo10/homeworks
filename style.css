@@ -88,7 +88,7 @@ p {
 }
 
 .blur-image {
-  background-image: url(./img/painted-grey-back.jpg);
+  background-image: url(./img/grey-back.jpg);
   background-size: cover;
   filter: blur(5px); /* Размытие изображения */
   transition: 1s; /* Время перехода */
@@ -140,6 +140,11 @@ p {
 /* end program_lang */
 
 /* start table */
+
+.table_block{
+  background-image: url("./img/dirty-pattern-paint-room-block.jpg")
+}
+
 .table {
   background-color:blanchedalmond;
   padding: 10px;
