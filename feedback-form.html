@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./form.css">
+  <title>Форма обратной связи</title>
+</head>
+<body>
+ <fieldset>
+  <legend>Форма</legend>
+    
+    <form action="#" method="get">
+      <div class="form-row">
+      <label for="name">Имя</label>
+      <input type="text" name="name" id="name" placeholder="Введите имя" maxlength="30" minlength="2">
+    </div>
+   
+    <div class="form-row">
+      <label for="form-question">Вопрос</label>
+      <textarea id="form-question" cols="30" rows="5" placeholder="Опишите вопрос"></textarea>
+    </div>
+    
+   
+    <div class="form-row">
+      <label for="form-project">Стоимость проекта:</label>
+      <input type="radio" name="price" id="price-0-50000" >
+      <label for="price">от 0 до 50000</label>
+      <input type="radio" name="price" id="price-50000-200000" >
+      <label for="price">от 50000 до 200000</label>
+      <input type="radio" name="price" id="price-200000" >
+      <label for="price">от 2000000</label>
+    </div>
+  
+    <div class="form-row">
+      <label for="form-project">Когда начало проекта</label>
+      <input type="date" name="form-project" id="form-project" min="2023.01.01">
+    </div>
+  <div class="form-row">
+    <label for="form-technologies">Используемые технологии:</label>
+    <label><input type="checkbox" id="form-technologies">HTML</label>
+    <label><input type="checkbox" id="form-technologies">CSS</label>
+    <label><input type="checkbox" id="form-technologies">JavaScript</label>
+    <label><input type="checkbox" id="form-technologies">Node.js</label>
+  </div>
+  <div class="form-row">
+    <input type="submit" value="Отправить форму">
+    <button type="reset">Сброс формы</button>
+  </div>
+
+    </form>
+  </fieldset>
+</body>
+</html>

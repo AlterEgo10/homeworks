@@ -1,0 +1,52 @@
+fieldset{
+  background-color:bisque;
+  padding: 30px;
+  width: 600px;
+  margin: 0 auto;
+
+}
+
+fieldset:hover{
+ 
+ border-color: aqua;
+}
+
+.form-row{
+  margin-bottom: 30px;
+}
+
+input[type=text],
+button[type=reset],
+input[type=submit],
+textarea{
+  padding: 10px;
+  margin: 10px auto;
+  border-radius: 10px;
+  border: 2px solid gray;
+  width: 100% ;
+}
+
+input[type=text]:hover,textarea:hover{
+background-color: blanchedalmond;
+}
+
+input[type=text]:focus,textarea:focus{
+  border-color: rgb(172, 230, 48);
+  background-color: rgb(183, 224, 240);
+  }
+
+  input::placeholder{
+    color: black;
+  }
+
+  input[type=submit]{
+background-color:rgb(90, 90, 208);
+cursor:pointer;
+color:rgb(248, 247, 247);
+  }
+
+  button{
+    background-color:rgb(154, 28, 28);
+    color:rgb(248, 247, 247);
+    cursor:pointer;
+  }
