@@ -69,6 +69,12 @@ p {
   color: #594b91;
 }
 
+.menu_link a{
+  transition-property: all;
+  transition-duration: 1s;
+  transition-delay: .4s;
+}
+
 .menu_link a:hover {
   color: rgb(134, 19, 19);
   text-decoration: none;
@@ -129,14 +135,41 @@ p {
   padding-bottom: 20px;
 }
 
+
+.program_lang-li-transform:hover{
+transform: scale(1.4,2);
+color:red;
+}
+
 .projects1,
 .projects2 {
   padding: 10px;
-  margin: 10px;
+  margin: 40px 0;
   border: 2px solid rgb(63, 61, 61);
   color: azure;
   width: 500px;
+
 }
+
+@keyframes colors{
+0% {background-color:darkslategray}
+25%{background-color:aquamarine}
+50%{background-color:cornflowerblue}
+100%{background-color:rgb(240, 188, 17);}
+}
+
+.animation-colors{
+ animation-name: colors;
+ animation-duration: 2s;
+ animation-delay: .8s;
+ animation-iteration-count: infinite;
+ animation-timing-function: liner;
+}
+
+.animation-colors:hover{
+  animation-play-state: paused;
+}
+
 /* end program_lang */
 
 /* start table */
