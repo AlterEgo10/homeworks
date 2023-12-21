@@ -37,16 +37,16 @@ p {
 }
 
 .menu {
-  /* position: relative; */
+  position: relative; 
   /* left: 150px; */
 }
 
 .menu li {
   position: relative; 
-  /* z-index: 2; */
-  /* display: inline; */
+  z-index: 2;
+  display: inline;
   padding-left: 15px;
-  /* font-size: 1.6em; */
+  font-size: 1.6em;
 } 
 
 .menu_link a:link {
