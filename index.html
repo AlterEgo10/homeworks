@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./global.css" />
+    <!-- <link rel="stylesheet" href="./global.css" /> -->
     <link rel="stylesheet" href="./style.css" />
     <!-- <link rel="stylesheet" href="./media-mobile.css" /> -->
     <link rel="stylesheet" href="./font/opensans/opensans.css" />
@@ -16,8 +16,8 @@
   </head>
   <body>
     <!-- start header -->
-
-    <header class="header_flex" id="header">
+<div class="container">
+    <header class="header_flex card" id="header">
       <h1>Сайт портфолио</h1>
       <input type="checkbox" class="menu-checkbox" id="menu-checkbox">
       <label for="menu-checkbox" class="lines-container"><span class="lines-item"></span></label>
@@ -48,7 +48,7 @@
     <!-- end header -->
 
     <!-- start about -->
-    <div class="about">
+    <div class=" card about">
       <div class="blur-image program_lang_flex">
         <p>
           <span class="bold"
@@ -87,7 +87,7 @@
 
     <!-- start container_program_lang -->
 
-    <div class="container_program_lang">
+    <div class="container_program_lang card">
       <h2>Технологии и языки программирования:</h2>
       <div class="program_lang_flex">
         <ul class="program_lang-item">
@@ -120,7 +120,7 @@
     <!-- end container_program_lang -->
 
     <!-- start table -->
-<div class="table_block">
+<div class="table_block card">
     <table class="table">
       <caption class="table_caption">
         Заголовок
@@ -147,7 +147,7 @@
     <!-- end table -->
 
     <!-- start footer -->
-    <footer class="footer">
+    <footer class="footer card">
       <p><a href="reviews.html">Отзывы</a></p>
       <span class="icon-calenda"></span>
       <span class="icon-cont"></span>
@@ -156,5 +156,6 @@
     <div class="fixed">
       <a href="#header"><i class="bi bi-arrow-up-square-fill"></i></a>
     </div>
+  </div>
   </body>
 </html>
