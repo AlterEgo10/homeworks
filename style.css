@@ -161,7 +161,7 @@ p {
 
 .program_lang_flex {
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   justify-content: space-around;
   align-items: center;
   
@@ -175,11 +175,14 @@ p {
 }
 
 .program_lang-item li {
+  width: 200px;
   font-size: 1.5rem;
   color: azure;
   padding-bottom: 20px;
+  padding-right: 60px;
   margin: 40px;
-  margin-left: 10px;
+  margin-left: 60px;
+
 }
 
 
@@ -195,6 +198,7 @@ color:red;
   border: 2px solid rgb(63, 61, 61);
   color: azure;
 /* padding: 50px; */
+
 }
 
 @keyframes colors{
@@ -308,6 +312,15 @@ body{
   'table_block'
   /* 'footer' */
   ;
+
+  .program_lang_flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    
+  }
+
 }
 footer{
   display: none;
