@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /update.html
+Allow: /
+Clean-param: utm 
+Sitemap: http://localhost:5500/sitemap.xml
