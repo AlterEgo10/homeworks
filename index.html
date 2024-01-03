@@ -6,6 +6,7 @@
     <!-- <link rel="stylesheet" href="./global.css" /> -->
     <link rel="stylesheet" href="./style.css" />
     <!-- <link rel="stylesheet" href="./media-mobile.css" /> -->
+    <link rel="stylesheet" href="./normalize.css">
     <link rel="stylesheet" href="./font/opensans/opensans.css" />
     <link
       rel="stylesheet"
@@ -36,19 +37,19 @@
           <p>Ваш браузер не поддерживает HTML5 видео.</p>
         </video>
       </div>
-      
+      <nav>
       <ul class="menu">
         <li class="menu_link"><a href="#">Главная</a></li>
         <li class="menu_link"><a href="#">Отзывы</a></li>
         <li class="menu_link"><a href="#">Контакты</a></li>
       </ul>
-    
+    </nav>
     </header>
 
     <!-- end header -->
 
     <!-- start about -->
-    <div class=" card about">
+    <main class=" card about">
       <div class="blur-image program_lang_flex">
         <p>
           <span class="bold"
@@ -81,7 +82,7 @@
           Eaque, eius.
         </p>
       </div>
-    </div>
+    </main>
 
     <!-- end about -->
 
@@ -96,7 +97,7 @@
           <li class="program_lang-li-transform">JavaScript <i class="bi bi-fire"></i></li>
         </ul>
 
-        <div class="projects1 animation-colors">
+        <section class="projects1 animation-colors">
           <h3>Сайт визитка</h3>
 
           <p class="opensans">
@@ -105,8 +106,8 @@
             Voluptates quas a excepturi corporis ex aut dignissimos ut autem
             corrupti! Dignissimos, necessitatibus?
           </p>
-        </div>
-        <div class="projects2">
+        </section>
+        <section class="projects2">
           <h3>Книга учета доходов</h3>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. In impedit
@@ -114,13 +115,14 @@
             praesentium, dolorem, reprehenderit dicta, iure maxime. Atque hic
             consectetur veniam ratione.
           </p>
-        </div>
+        </section>
       </div>
     </div>
     <!-- end container_program_lang -->
 
     <!-- start table -->
-<div class="table_block card">
+<details class="table_block card">
+  <summary>Таблица</summary>
     <table class="table">
       <caption class="table_caption">
         Заголовок
@@ -143,7 +145,7 @@
         <td>Значение</td>
       </tr>
     </table>
-  </div>
+  </details>
     <!-- end table -->
 
     <!-- start footer -->

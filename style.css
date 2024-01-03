@@ -93,6 +93,7 @@ p {
 }
 
 .menu {
+  display: flex;
   position: relative; 
   /* left: 150px; */
 }
@@ -100,9 +101,10 @@ p {
 .menu li {
   position: relative; 
   z-index: 2;
-  display: inline;
+  /* display: inline; */
   padding-left: 15px;
   font-size: 1.6em;
+  list-style-type: none;
 } 
 
 .menu_link a:link {
@@ -161,7 +163,7 @@ p {
 
 .program_lang_flex {
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   justify-content: space-around;
   align-items: center;
   
@@ -175,11 +177,14 @@ p {
 }
 
 .program_lang-item li {
+  width: 200px;
   font-size: 1.5rem;
   color: azure;
   padding-bottom: 20px;
+  padding-right: 60px;
   margin: 40px;
-  margin-left: 10px;
+  margin-left: 60px;
+
 }
 
 
@@ -195,6 +200,7 @@ color:red;
   border: 2px solid rgb(63, 61, 61);
   color: azure;
 /* padding: 50px; */
+
 }
 
 @keyframes colors{
@@ -239,6 +245,7 @@ table th {
   border: 1px black solid;
   padding: 10px;
 }
+
 /* end table*/
 
 /* start footer */
@@ -306,8 +313,56 @@ body{
   'about'
   'container_program_lang'
   'table_block'
-  /* 'footer' */
+  
   ;
+
+  h1{
+   
+    /* position: relative; */
+    z-index: 2;
+    color: azure;
+    margin-top: 10px;
+    font-size: 1.6rem;
+    }
+
+    .header_flex {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      /* position: relative; */
+      min-height: 25vh;
+      width: 100%;
+      z-index: 5;
+    }
+
+  .menu {
+    display: flex;
+    /* position: relative;  */
+    flex-wrap: wrap;
+    flex-direction: column;
+    /* left: 150px; */
+
+    z-index: 2;
+  }
+  
+  .menu li {
+    /* position: relative;  */
+    z-index: 2;
+    
+    padding-left: 15px;
+    font-size: 1.6rem;
+    list-style-type: none;
+    /* left: -80%; */
+  } 
+
+  .program_lang_flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    
+  }
+
 }
 footer{
   display: none;
