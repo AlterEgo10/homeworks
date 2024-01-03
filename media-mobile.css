@@ -91,9 +91,6 @@ z-index: 5;
   top: -7px;
 }
 
-.menu-checkbox{
-  display: none;
-}
 
 .menu-checkbox:checked ~ .nav {
   max-height: 100%;
