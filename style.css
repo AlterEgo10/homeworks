@@ -1,0 +1,76 @@
+body{
+  background: #090E16;
+  ;
+}
+
+.container{
+  width:1920px ;
+ 
+}
+
+/* start nav */
+
+.menu {
+  margin: 38px auto;
+  width: 1640px;
+height: 64px;
+/* top: 38px;
+left: 140px; */
+border-radius: 16px;
+/* opacity: 0.8; */
+  display: flex;
+  align-items:center;
+  /* position: relative;  */
+ justify-content: end;
+ background-color:#7B4AE20D;
+
+
+}
+
+.menu-logo{
+  position: relative;
+  right: 1000px;
+}
+
+.menu_link{
+  padding-right: 16px;
+  color: #FFFFFF80;
+  list-style-type: none;
+}
+
+.menu-text{
+  color:#FFFFFF80;
+  text-decoration: none;
+}
+
+
+/* end nav */
+/* star header */
+
+.header{
+  display: flex;
+  justify-content: space-around;
+  align-items:center;
+}
+
+
+
+.header-item{
+ 
+}
+
+.header-greeatings{
+  color: #7B4AE2;
+}
+
+.header-yourname{
+  color:#FFFFFF;
+}
+
+.header-item-watsapplogo{
+  img: url(./img/whatsapplogo.png);
+  color: #7B4AE280;
+}
+
+
+/* end header */
