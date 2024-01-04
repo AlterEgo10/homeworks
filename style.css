@@ -55,9 +55,9 @@ border-radius: 16px;
 
 
 
-.header-item{
+/* .header-item{
  
-}
+} */
 
 .header-greeatings{
   color: #7B4AE2;
@@ -67,10 +67,10 @@ border-radius: 16px;
   color:#FFFFFF;
 }
 
-.header-item-watsapplogo{
+/* .header-item-watsapplogo{
   img: url(./img/whatsapplogo.png);
   color: #7B4AE280;
-}
+} */
 
 
 /* end header */
