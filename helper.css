@@ -1,3 +1,64 @@
 .text-color-gray{
   color: #FFFFFF80;
 }
+
+.text-color-white{
+  color: white;
+}
+
+.text-color-white{
+  color: white;
+}
+
+.career-card_text-white{
+  font-family: Raleway;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 23px;
+  letter-spacing: 0em;
+  text-align: left;
+  color:#FFFFFF;
+  padding:30px 30px 8px ;
+  margin: 0;
+}
+
+.career-card_text-grey{
+  width: 519.9px;
+height: 78.46px;
+top: 5526.92px;
+left: 1112px;
+  font-family: Raleway;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+color: #FFFFFF80;
+padding: 8px 30px 0px 30px ;
+margin: 0;
+}
+
+.career-card_text-violet{
+
+  width: 322.74px;
+height: 26.01px;
+top: 5621.79px;
+left: 1309.18px;
+font-family: Raleway;
+font-size: 18px;
+font-weight: 400;
+line-height: 21px;
+letter-spacing: 0em;
+text-align: right;
+color: #7B4AE2;
+padding-right: 30px;
+padding-left: 210px;
+}
+
+.career-card_purple-background{
+  background-color:#7B4AE21A;
+}
+
+.recomendations-card_violet{
+  background-color:#7B4AE21A;
+}

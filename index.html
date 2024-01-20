@@ -7,255 +7,543 @@
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./normalize.css" />
     <link rel="stylesheet" href="./font/raleway.css" />
-<link rel="stylesheet" href="./helper.css" />
+    <link rel="stylesheet" href="./helper.css" />
+    <!-- <link rel="stylesheet" href="./media-mobil.css" media="screen and (max-width:768px);"/> -->
     <title>HTML/CSS-English</title>
   </head>
   <body>
     <div class="container">
+      <!-- start nav -->
+      <!-- <div class="header-nav"> -->
+        <div class="header_flex-card">
+        <input type="checkbox" class="menu-checkbox" id="menu-checkbox">
+        <label for="menu-checkbox" class="lines-container"><span class="lines-item"></span></label>
       
-<!-- start nav -->
+      <nav class="nav">
+       
 
-        <nav class="nav">
+          <img src="./img/logo.svg" alt="Logo"  class="menu-logo" />
           <ul class="menu">
-            <img src="./img/logo.svg" alt="Logo" class="menu-logo menu_link">
-            <li class="menu_link"><a href="#" class="menu-text-home">Home</a></li>
-            <li class="menu_link"><a href="#" class="menu-text">About me</a></li>
-            <li class="menu_link"><a href="#" class="menu-text">Portfolio</a></li>
-            <li class="menu_link"><a href="#" class="menu-text">Skills</a></li>
-            <li class="menu_link"><a href="#" class="menu-text">Career</a></li>
-            <li class="menu_link"><a href="#" class="menu-text">Recommendations</a></li>
-            <li class="menu_link"><a href="#" class="menu-text">Contacts</a></li>
-          </ul>
+         
+          <li class="menu_link"><a href="#" class="menu-text" id="home">Home</a></li>
+          <li class="menu_link"><a href="#about" class="menu-text">About me</a></li>
+          <li class="menu_link"><a href="#portfolio" class="menu-text">Portfolio</a></li>
+          <li class="menu_link"><a href="#skills" class="menu-text">Skills</a></li>
+          <li class="menu_link"><a href="#career" class="menu-text">Career</a></li>
+          <li class="menu_link">
+            <a href="#recommendations" class="menu-text">Recommendations</a>
+          </li>
+          <li class="menu_link"><a href="#contacts" class="menu-text">Contacts</a></li>
+        </ul>
       </nav>
+    </div>
+   
+      <!-- end nav -->
+      <!-- start header -->
+      <header class="header" id="header">
+   
 
-        <!-- end nav -->
-<!-- start header -->
-        <header class="header">
         <div class="header-item">
           <p class="header-greeatings">👋 Greetings!</p>
-          <h2 class="header-yourname">Your<br>Name</h2>
-          <!-- <p class="header-yourname">Your</p>
-          <p class="header-yourname">Name</p> -->
+          <h2 class="header-yourname">Your<br />Name</h2>
           <p class="header-developer">Front-end developer · UI designer</p>
-          <img src="./img/social-medias.png" alt="socialmedias">
-        </div>
-        <img src="./img/avatar-andIcons.svg" alt="avatar-andIcons" />
-        <div class="header-item-right">
-          <p class="header-item-cv">Download CV<span class="header-item-cv-arrow"></span>
-          </p>
-          <p class="header-item-watsapptext"><span class="header-item-watsapplogo"></span>Let’s chat on WhatsApp</p>
+          <div>
+            <img src="./img/linkedinin.png" alt="linkedinin" class="header_socialmedias-icon" />
+            <img src="./img/githubgit.png" alt="githubgit" class="header_socialmedias-icon" />
+            <img src="./img/behance-be.png" alt="behance" class="header_socialmedias-icon" />
+          </div>
         </div>
       
-      </section>
+          <img src="./img/avatar-andIcons.svg" alt="avatar-andIcons" class="header_avatar" />
+       
+        <div class="header-item-right">
+          <p class="header-item-cv">
+            Download CV<span class="header-item-cv-arrow"></span>
+          </p>
+          <p class="header-item-watsapptext">
+            <span class="header-item-watsapplogo"></span>Let’s chat on WhatsApp
+          </p>
+        </div>
       </header>
 
       <!-- end header -->
-       <!-- start experience  -->
+      <!-- start experience  -->
 
-<section class="experience">
-<div class="experience-cards">
-<div class="dev-card">
+      <section class="experience">
+        <div class="experience-cards">
+          <div class="dev-card">
+<img src="./img/codeicon.svg" alt="codeIcon" class="dev-card_codeicon">
+<p class="dev-card_text-years">3 years as a</p>
+<h3 class="dev-card_text-h3">Developer</h3>
 
-</div>
-<div class="projects-card">
-
-</div>
-<div class="design-card">
-</div>
-</div>
-<div class="experience-description">
-
-</div>
-</section>
- <!-- end experience  -->
-
- <!-- start about -->
-<section class="about">
-  <img src="./img/avatar-andIcons.svg" alt="avatar-andIcons" class="about-avatar"/>
-  <div class="about-me">
-<p class="about-me_text">🧐 About me</p>
-<br>
-<h2 class="about-me_your-name">Your Name <br>Surname</h2>
-<p class="header-developer">👋 Hello world! You can just call me. Pleasure! <br>
-<br>
-  👨‍💻 For over 2 years developing and programming interfaces with JavaScript, React.js and Typescript.<br>
-  🎓 Graduated in Systems Analysis and Development.<br>
-  💡 Interests in Front-end development with JavaScript, TypeScript, React.js and UX/UI Design.<br>
-   <br>
-  🚀 Trying to be a little better than yesterday every day.</p>
-  </div>
-</section>
- <!-- end about -->
-
- <!-- start portfólio-title -->
-
-<section class="portfólio-title">
-  <div class="portfólio-title_text">
-<p class="portfólio-title_text-portfolio">🔗 Portfolio</p>
-<h2 class="portfólio-title_text-works">Works and projects</h2>
-</div>
-<img src="./img/workoptions.png" alt="work options" class="work-option">
-</section>
-<!-- end portfólio-title -->
-
-<!-- start project-title -->
-
-<figure class="project-title">
-<div class="project-title_card">
-<p class="card-title">Project Title</p>
-<p class="card-text">Rocketseat web app.<br> Pomodoro platform with exercises.<br> The app is available for use, click on the card.</p>
-<div class="card-info">
-<p class="card-choice1">Online</p>
-<p class="card-choice2">Typescript</p>
-</div>
-<img src="./img/image 1.png" alt="image" class="card-img">
-</div>
-
-<div class="project-title_card-color">
-  <p class="card-title">Project Title</p>
-  <p class="card-text">Rocketseat web app.<br> Pomodoro platform with exercises.<br> The app is available for use, click on the card.</p>
-  <div class="card-info">
-  <p class="card-choice2">React JS</p>
-  <p class="card-choice2">Typescript</p>
-  </div>
-  <img src="./img/image 1.png" alt="image" class="card-img">
-  </div>
-
-  <div class="project-title_card">
-    <p class="card-title">Project Title</p>
-    <p class="card-text">Rocketseat web app.<br> Pomodoro platform with exercises.<br> The app is available for use, click on the card.</p>
-    
-    <div class="card-info">
-    <p class="card-choice2">React JS</p>
-    <p class="card-choice2">Typescript</p>
-    </div>
-    <img src="./img/image 1.png" alt="image" class="card-img">
-    </div>
-
-    <div class="project-title_card">
-      <p class="card-title">Project Title</p>
-      <p class="card-text">Rocketseat web app.<br> Pomodoro platform with exercises.<br> The app is available for use, click on the card.</p>
-      
-      <div class="card-info">
-      <p class="card-choice2">React JS</p>
-      <p class="card-choice2">Typescript</p>
-      </div>
-      <img src="./img/image 1.png" alt="image" class="card-img">
-      </div>
-
-      <div class="project-title_card">
-        <p class="card-title">Project Title</p>
-        <p class="card-text">Rocketseat web app.<br> Pomodoro platform with exercises.<br> The app is available for use, click on the card.</p>
-        
-        <div class="card-info">
-        <p class="card-choice2">React JS</p>
-        <p class="card-choice2">Typescript</p>
+          </div>
+          <div class="dev-card">
+            <img src="./img/projectsicon.svg" alt="projectsicon" class="dev-card_codeicon">
+<p class="dev-card_text-years">7 years of</p>
+<h3 class="dev-card_text-h3">work</h3>
+          </div>
+          <div class="dev-card">
+            <img src="./img/designicon.svg" alt="designicon" class="dev-card_codeicon">
+<p class="dev-card_text-years">4 years as a</p>
+<h3 class="dev-card_text-h3">Designer</h3>
+          </div>
         </div>
-        <img src="./img/image 1.png" alt="image" class="card-img">
+        <div class="experience-description">
+          <div class="experience-description_cont-p">
+<p class="experience-description_text-p">Developer</p>
+<p class="experience-description_text-p">Dozens of projects and</p>
+<p class="experience-description_text-p">Freelance designer and</p>
+</div>
+<div class="experience-description_cont-h3">
+<h3 class="experience-description_text-h3">Front-end</h3>
+<h3 class="experience-description_text-h3">Experiences</h3>
+<h3 class="experience-description_text-h3">UI · UX</h3>
+</div>
         </div>
+      </section>
+      <!-- end experience  -->
 
-        <div class="project-title_card-color">
-          <p class="card-title">Project Title</p>
-          <p class="card-text">Rocketseat web app.<br> Pomodoro platform with exercises.<br> The app is available for use, click on the card.</p>
+      <!-- start about -->
+      <section class="about" id="about">
+        <!-- <img
+          src="./img/avatar-andIcons.svg"
+          alt="avatar-andIcons"
+          class="about-avatar" -->
+          <img src="./img/avatar-andIcons.svg" alt="avatar-andIcons" class="header_avatar" />
+        />
+        <div class="about-me">
+          <p class="about-me_text">🧐 About me</p>
+          <br />
+          <h2 class="about-me_your-name">Your Name <br />Surname</h2>
+          <p class="header-developer">
+            👋 Hello world! You can just call me. Pleasure! <br />
+            <br />
+            👨‍💻 For over 2 years developing and programming interfaces with
+            JavaScript, React.js and Typescript.<br />
+            🎓 Graduated in Systems Analysis and Development.<br />
+            💡 Interests in Front-end development with JavaScript, TypeScript,
+            React.js and UX/UI Design.<br />
+            <br />
+            🚀 Trying to be a little better than yesterday every day.
+          </p>
+        </div>
+      </section>
+      <!-- end about -->
+
+      <!-- start portfólio-title -->
+
+      <section class="portfólio-title" id="portfolio">
+        <div class="portfólio-title_text">
+          <p class="portfólio-title_text-portfolio">🔗 Portfolio</p>
+          <h2 class="portfólio-title_text-works">Works and projects</h2>
+        </div>
+        <div class="work-option">
           
-          <div class="card-info">
-          <p class="card-choice2">React JS</p>
-          <p class="card-choice2">Typescript</p>
-          </div>
-          <img src="./img/image 1.png" alt="image" class="card-img">
-          </div>
+          <p class="work-option_text-design"><img src="./img/designicon-work.png" alt="designIcon-work_text-" class="work-option_designicon">UI Design</p>
 
-          <div class="project-title_card">
-            <p class="card-title">Project Title</p>
-            <p class="card-text">Rocketseat web app.<br> Pomodoro platform with exercises.<br> The app is available for use, click on the card.</p>
-            
-            <div class="card-info">
+          <p class="work-option_text-design"><img src="./img/designicon-work.png" alt="designIcon-work_text-" class="work-option_designicon">Design</p>
+
+          <p class="work-option_text-design"><img src="./img/designicon-work.png" alt="designIcon-work_text-" class="work-option_designicon">UI Design</p>
+      </div>
+      </section>
+      <!-- end portfólio-title -->_
+
+      <!-- start project-title -->
+
+      <figure class="project-title">
+        <div class="project-title_card">
+          <p class="card-title">Project Title</p>
+          <p class="card-text">
+            Rocketseat web app.<br />
+            Pomodoro platform with exercises.<br />
+            The app is available for use, click on the card.
+          </p>
+          <div class="card-info">
+            <p class="card-choice1">Online</p>
+            <p class="card-choice2">Typescript</p>
+          </div>
+          <img src="./img/image 1.png" alt="image" class="card-img" />
+        </div>
+
+        <div class="project-title_card">
+          <p class="card-title">Project Title</p>
+          <p class="card-text">
+            Rocketseat web app.<br />
+            Pomodoro platform with exercises.<br />
+            The app is available for use, click on the card.
+          </p>
+          <div class="card-info">
             <p class="card-choice2">React JS</p>
             <p class="card-choice2">Typescript</p>
-            </div>
-            <img src="./img/image 1.png" alt="image" class="card-img">
-            </div>
+          </div>
+          <img src="./img/image 1.png" alt="image" class="card-img" />
+        </div>
 
-            <div class="project-title_card">
-              <p class="card-title">Project Title</p>
-              <p class="card-text">Rocketseat web app.<br> Pomodoro platform with exercises.<br> The app is available for use, click on the card.</p>
-              
-              <div class="card-info">
-              <p class="card-choice2">React JS</p>
-              <p class="card-choice2">Typescript</p>
-              </div>
-              <img src="./img/image 1.png" alt="image" class="card-img">
-              </div>
-              <figcaption class="description">See more projects on GitHub 
-                <img src="./img/arrowright.png" alt="arrow-right" class="arrow-right">
-              </figcaption>
+        <div class="project-title_card">
+          <p class="card-title">Project Title</p>
+          <p class="card-text">
+            Rocketseat web app.<br />
+            Pomodoro platform with exercises.<br />
+            The app is available for use, click on the card.
+          </p>
 
-</figure>
+          <div class="card-info">
+            <p class="card-choice2">React JS</p>
+            <p class="card-choice2">Typescript</p>
+          </div>
+          <img src="./img/image 1.png" alt="image" class="card-img" />
+        </div>
 
-<!-- end project-title -->
+        <div class="project-title_card">
+          <p class="card-title">Project Title</p>
+          <p class="card-text">
+            Rocketseat web app.<br />
+            Pomodoro platform with exercises.<br />
+            The app is available for use, click on the card.
+          </p>
 
-<!-- start Projects-videos -->
-<div class="projects-videos_text">
-<h2 class="projects-videos_text-h2">Projects with videos</h2>
-<p class="projects-videos_text-p">It's always good to know a little editing</p>
+          <div class="card-info">
+            <p class="card-choice2">React JS</p>
+            <p class="card-choice2">Typescript</p>
+          </div>
+          <img src="./img/image 1.png" alt="image" class="card-img" />
+        </div>
+
+        <div class="project-title_card">
+          <p class="card-title">Project Title</p>
+          <p class="card-text">
+            Rocketseat web app.<br />
+            Pomodoro platform with exercises.<br />
+            The app is available for use, click on the card.
+          </p>
+
+          <div class="card-info">
+            <p class="card-choice2">React JS</p>
+            <p class="card-choice2">Typescript</p>
+          </div>
+          <img src="./img/image 1.png" alt="image" class="card-img" />
+        </div>
+
+        <div class="project-title_card">
+          <p class="card-title">Project Title</p>
+          <p class="card-text">
+            Rocketseat web app.<br />
+            Pomodoro platform with exercises.<br />
+            The app is available for use, click on the card.
+          </p>
+
+          <div class="card-info">
+            <p class="card-choice2">React JS</p>
+            <p class="card-choice2">Typescript</p>
+          </div>
+          <img src="./img/image 1.png" alt="image" class="card-img" />
+        </div>
+
+        <div class="project-title_card">
+          <p class="card-title">Project Title</p>
+          <p class="card-text">
+            Rocketseat web app.<br />
+            Pomodoro platform with exercises.<br />
+            The app is available for use, click on the card.
+          </p>
+
+          <div class="card-info">
+            <p class="card-choice2">React JS</p>
+            <p class="card-choice2">Typescript</p>
+          </div>
+          <img src="./img/image 1.png" alt="image" class="card-img" />
+        </div>
+
+        <div class="project-title_card">
+          <p class="card-title">Project Title</p>
+          <p class="card-text">
+            Rocketseat web app.<br />
+            Pomodoro platform with exercises.<br />
+            The app is available for use, click on the card.
+          </p>
+
+          <div class="card-info">
+            <p class="card-choice2">React JS</p>
+            <p class="card-choice2">Typescript</p>
+          </div>
+          <img src="./img/image 1.png" alt="image" class="card-img" />
+        </div>
+        <figcaption class="description">
+          See more projects on GitHub
+          <img
+            src="./img/arrowright.png"
+            alt="arrow-right"
+            class="arrow-right"
+          />
+        </figcaption>
+      </figure>
+
+      <!-- end project-title -->
+
+      <!-- start Projects-videos -->
+      <div class="projects-videos_text">
+        <h2 class="projects-videos_text-h2">Projects with videos</h2>
+        <p class="projects-videos_text-p">
+          It's always good to know a little editing
+        </p>
+      </div>
+      <div class="video-card_flex">
+        <div class="video-card">
+          <img src="./img/image2.png" alt="video" class="image-video" />
+          <p class="video-card_text">Project Title</p>
+          <p class="video-card_text-web">Web application</p>
+          <img src="./img/play.png" alt="play" class="video-card_play" />
+          <p class="video-card_text-react">React JS</p>
+          <p class="video-card_text-react-right">React JS</p>
+          <p class="video-card_text-watch">Watch</p>
+        </div>
+
+        <div class="video-card video-card_color">
+          <img src="./img/image2.png" alt="video" class="image-video" />
+          <p class="video-card_text">Project Title</p>
+          <p class="video-card_text-web">Web application</p>
+          <img src="./img/play.png" alt="play" class="video-card2_play" />
+          <p class="video-card2_text-react">React JS</p>
+          <p class="video-card2_text-react-right">React JS</p>
+          <p class="video-card2_text-watch">Watch</p>
+        </div>
+        <div class="video-card">
+          <img src="./img/image2.png" alt="video" class="image-video" />
+          <p class="video-card_text">Project Title</p>
+          <p class="video-card_text-web">Web application</p>
+          <img src="./img/play.png" alt="play" class="video-card3_play" />
+          <p class="video-card3_text-react">React JS</p>
+          <p class="video-card3_text-react-right">React JS</p>
+          <p class="video-card3_text-watch">Watch</p>
+        </div>
+      </div>
+      <!-- end Projects-videos -->
+
+      <!-- start Skills -->
+
+      <section class="skills" id="skills">
+        <p class="skills-text">🧑‍💻 Skills</p>
+        <h2 class="skills-text-h2">Technologies and skills</h2>
+        <p class="skills-text-gray text-color-gray">
+          Techs I use on a daily basis
+        </p>
+        <div class="skills-img">
+        <img src="./img/skills-img/react.png" alt="working techs" class="skills-img_margin" />
+        <img src="./img/skills-img/javascript.png" alt="working techs" class="skills-img_margin"/>
+        <img src="./img/skills-img/typescript.png" alt="working techs" class="skills-img_margin"/>
+        <img src="./img/skills-img/nextjs.png" alt="working techs" class="skills-img_margin" />
+        <img src="./img/skills-img/group-1.png" alt="working techs" class="skills-img_margin"/>
+  <img src="./img/skills-img/html5.png" alt="working techs" class="skills-img_margin"/>
+        <img src="./img/skills-img/figma.png" alt="working techs" class="skills-img_margin"/>
+        <img src="./img/skills-img/github.png" alt="working techs" class="skills-img_margin"/>
+        <img src="./img/skills-img/github.png" alt="working techs" class="skills-img_margin"/>
+        <img src="./img/skills-img/shape.png" alt="working techs" class="skills-img_margin"/>
+        <img src="./img/skills-img/insomnia.png" alt="working techs" />
+      </div>
+
+        <p class="skills-text-gray text-color-gray">
+          Other techs I've done projects with
+        </p>
+        <div class="skills-img">
+          <img src="./img/skills-img/bitbucket.png" alt="working techs" class="skills-img_margin" />
+          <img src="./img/skills-img/vue.png" alt="working techs" class="skills-img_margin"/>
+          <img src="./img/skills-img/nodejs.png" alt="working techs" class="skills-img_margin"/>
+          <img src="./img/skills-img/tailwindcss.png" alt="working techs" class="skills-img_margin" />
+          <img src="./img/skills-img/saas.png" alt="working techs" class="skills-img_margin"/>
+    <img src="./img/skills-img/python.png" alt="working techs" class="skills-img_margin"/>
+          <img src="./img/skills-img/group-26.png" alt="working techs" class="skills-img_margin"/>
+          <img src="./img/skills-img/union.png" alt="working techs" class="skills-img_margin"/>
+          <img src="./img/skills-img/group-27.png" alt="working techs" class="skills-img_margin"/>
+          <img src="./img/skills-img/docker.png" alt="working techs" class="skills-img_margin"/>
+        </div>
+      </section>
+      <!-- end Skills -->
+
+      <!-- start career -->
+
+      <section class="career" id="career">
+        <div class="career-title">
+          <p class="career-title_text">💼 Career</p>
+          <h2 class="career-title_h2 text-color-white">Trajectory so far</h2>
+        </div>
+        <div class="career-card_flex">
+          <div>
+            <h3 class="text-color-white career-professional">
+              Professional area
+            </h3>
+            <p class="career-professional_p">2016 · At the moment</p>
+          </div>
+          <div class="career-card ">
+            <p class="career-card_text-white">
+              Front-end developer at Company Title
+            </p>
+            <p class="career-card_text-grey">
+              Development of features in the main application and site. With
+              React JavaScript and Typescript, along with the help of other
+              technologies such as Redux, Styled Components and architecture
+              standards.
+            </p>
+            <p class="career-card_text-violet">April/2021 · At the moment</p>
+          </div>
+
+          <div class="career-card">
+            <p class="career-card_text-white">
+              Front-end developer at Company Title
+            </p>
+            <p class="career-card_text-grey">
+              Development of features in the main application and site. With React JavaScript and Typescript, along with the help of other technologies such as Redux, Styled Components and architecture standards.
+            </p>
+            <p class="career-card_text-violet">January/2021 · April/2021</p>
+          </div>
+          <div class="career-card">
+            <p class="career-card_text-white">
+              Front-end developer at Company Title
+            </p>
+            <p class="career-card_text-grey">
+              Development of features in the main application and site. With React JavaScript and Typescript, along with the help of other technologies such as Redux, Styled Components and architecture standards.
+            </p>
+            <p class="career-card_text-violet">February/2019 · January/2021</p>
+          </div>
+          <div class="career-card">
+            <p class="career-card_text-white">
+              Front-end developer at Company Title
+            </p>
+            <p class="career-card_text-grey">
+              Development of features in the main application and site. With React JavaScript and Typescript, along with the help of other technologies such as Redux, Styled Components and architecture standards.
+            </p>
+            <p class="career-card_text-violet">January/2020 · January/2021</p>
+          </div>
+          <div class="career-card">
+            <p class="career-card_text-white">
+              Front-end developer at Company Title
+            </p>
+            <p class="career-card_text-grey">
+              Development of features in the main application and site. With React JavaScript and Typescript, along with the help of other technologies such as Redux, Styled Components and architecture standards.
+            </p>
+            <p class="career-card_text-violet">October/2016 · December/2017</p>
+          </div>
+          <div>
+            <h3 class="text-color-white career-professional">Academic area</h3>
+            <p class="career-professional_p">2014 · At the moment</p>
+          </div>
+          <div class="career-card">
+            <p class="career-card_text-white">
+              Student, Analysis and Development of Systems
+            </p>
+            <p class="career-card_text-grey">
+              Completed a web development course. Learned how to design and
+              develop modern websites and web applications. During the training,
+              I created my portfolio of projects and received a certificate.
+            </p>
+            <p class="career-card_text-violet">August/2019 · August/2022</p>
+          </div>
+          <div class="career-card">
+            <p class="career-card_text-white">
+              Training course, HTML/CSS
+            </p>
+            <p class="career-card_text-grey">
+              Completed a web development course. Learned how to design and
+              develop modern websites and web applications. During the training,
+              I created my portfolio of projects and received a certificate.
+            </p>
+            <p class="career-card_text-violet">February/2018 · June/2019</p>
+          </div>
+          <div class="career-card">
+            <p class="career-card_text-white">
+              Training course, JavaScrip
+            </p>
+            <p class="career-card_text-grey">
+              Completed a web development course. Learned how to design and
+              develop modern websites and web applications. During the training,
+              I created my portfolio of projects and received a certificate.
+            </p>
+            <p class="career-card_text-violet">July/2018 · December/2018</p>
+          </div>
+          <div class="career-card">
+            <p class="career-card_text-white">
+              Training course, Node.js
+            </p>
+            <p class="career-card_text-grey">
+              Completed a web development course. Learned how to design and
+              develop modern websites and web applications. During the training,
+              I created my portfolio of projects and received a certificate.
+            </p>
+            <p class="career-card_text-violet">December/2017</p>
+          </div>
+        </div>
+      </section>
+      <!-- end career -->
+
+      <!-- start Recomendations -->
+
+      <section id="recommendations">
+        <div class="recomendations-title_flex">
+      <div class="recomendations-title">
+<p class="career-card_purple-background recomendations-text">💬 Recommendations</p>
+<h2 class="text-color-white recomendations-title_h2">Latest reviews</h2>
 </div>
-<div class="video-card_flex">
-<div class="video-card">
-<img src="./img/image2.png" alt="video" class="image-video">
-<p class="video-card_text">Project Title</p>
-<p class="video-card_text-web">Web application</p>
-<img src="./img/play.png" alt="play" class="video-card_play"> 
-<p class="video-card_text-react">React JS</p>
-<p class="video-card_text-react-right">React JS</p>
-<P class="video-card_text-watch">Watch</P>
-</div>
-
-  <div class="video-card video-card_color">
-  <img src="./img/image2.png" alt="video" class="image-video">
-  <p class="video-card_text">Project Title</p>
-  <p class="video-card_text-web">Web application</p>
-  <img src="./img/play.png" alt="play" class="video-card2_play"> 
-  <p class="video-card2_text-react">React JS</p>
-  <p class="video-card2_text-react-right">React JS</p>
-  <P class="video-card2_text-watch">Watch</P>
-</div>
-<div class="video-card">
-  <img src="./img/image2.png" alt="video" class="image-video">
-  <p class="video-card_text">Project Title</p>
-  <p class="video-card_text-web">Web application</p>
-  <img src="./img/play.png" alt="play" class="video-card3_play"> 
-  <p class="video-card3_text-react">React JS</p>
-  <p class="video-card3_text-react-right">React JS</p>
-  <P class="video-card3_text-watch">Watch</P>
-  </div>
-  </div>
-<!-- end Projects-videos -->
-
-<!-- start Skills -->
-
-<section class="skills">
-
-<p class="skills-text">🧑‍💻 Skills</p>
-<h2 class="skills-text-h2">Technologies and skills</h2>
-<p class="skills-text-gray text-color-gray">Techs I use on a daily basis</p>
-<img src="./img/workingtechs.png" alt="working techs"> 
-<p class="skills-text-gray text-color-gray">Other techs I've done projects with</p>
-<img src="./img/projectstechs.png" alt="projects techs">
-</section>
-<!-- end Skills -->
-
-<!-- start career -->
-
-<section class="career">
-<div class="career-title">
-  <p class="career-title_text">💼 Career</p>
-  <h2 class="career-title_h2">Trajectory so far</h2>
-</div>
-</section>
-<!-- end career -->
-      <footer>
-        <p class="footer_text">&copy; Все права защищены. 2023</p>
-      </footer>
+<div class="recomendations-title_caret">
+<img src="./img/caret-left.png" alt="caret-left " class="recomendations-title_caret-left">
+<img src="./img/caret-right.png" alt="caret-right" class="recomendations-title_caret-left">
+      </div>
     </div>
+      <div class="recomendations-card_flex">
+<div class="recomendations-card">
+<img src="./img/quotes.png" alt="quotes" class="recomendations-card_quotes">
+<p class="recomendations-card_text
+">I recommend the web developer as one of the best. He worked on my web application, everything was done on time, the quality of the code is very good. The project uses the following technologies and programming languages: HTML/CSS, JavaScript, TypeScript and Node.js.</p>
+<p class="recomendations-card_text-romario"><img src="./img/image-3.png" alt="image-3" class="recomendations-card_img-romario">Romario Lima
+  <p class="recomendations-card_text-development">Development Team Lead</p></p>
+</div>
+<div class="recomendations-card">
+  <img src="./img/quotes.png" alt="quotes" class="recomendations-card_quotes">
+  <p class="recomendations-card_text
+  ">I recommend the web developer as one of the best. He worked on my web application, everything was done on time, the quality of the code is very good. The project uses the following technologies and programming languages: HTML/CSS, JavaScript, TypeScript and Node.js.</p>
+  <p class="recomendations-card_text-romario"><img src="./img/image-3.png" alt="image-3" class="recomendations-card_img-romario">Romario Lima
+    <p class="recomendations-card_text-development">Development Team Lead</p></p>
+  </div>
+  <div class="recomendations-card">
+    <img src="./img/quotes.png" alt="quotes" class="recomendations-card_quotes">
+    <p class="recomendations-card_text
+    ">I recommend the web developer as one of the best. He worked on my web application, everything was done on time, the quality of the code is very good. The project uses the following technologies and programming languages: HTML/CSS, JavaScript, TypeScript and Node.js.</p>
+    <p class="recomendations-card_text-romario"><img src="./img/image-3.png" alt="image-3" class="recomendations-card_img-romario">Romario Lima
+      <p class="recomendations-card_text-development">Development Team Lead</p></p>
+    </div>
+  </div>
+      </section>
+<!-- end Recomendations -->
+
+<!-- start contacts -->
+<section class="contacts-container" id="contacts">
+<p class="contacts-text">📬 Contacts</p>
+<h3 class="contacts-text_h3">Let's talk!</h3>
+
+<!-- <p class="contacts-text_whatsapp"><img src="./img/whatsapplogo.png" alt="WhatsApp" class="contacts-text_img-whatsapp" > WhatsApp</p> -->
+<div class="contacts-text_contacts-container">
+  <p class="contacts-text_whatsapp"><img src="./img/whatsapplogo.png" alt="WhatsApp" class="contacts-text_img-whatsapp" > WhatsApp</p>
+  <div class="contacts-text_contacts">
+<img src="./img/paper-plane-tilt.png" alt="paper-plane-tilt" class="contacts-text_contacts-paper-plane">
+<p class="contacts-text_contacts-mail">E-mail:</p>
+<p class="contacts-text_contacts-mail-domain">your-email@domain.ru</p>
+<img src="./img/copy-simple.png" alt="copy-simple">
+</div>
+</div>
+<a class="contacts-text_contacts-back" href="#header">Back to the top <img src="./img/arrow-up.png" alt="arrow-up" class="contacts-text_contacts-back-img"> </a>
+
+
+</section>
+<!-- end contacts -->
+</div>
+      <footer class="footer">
+        <!-- <p class="footer_text" >Copyright © Your Name · 2023 <img src="./img/social-medias.png" alt="social-medias" class="footer_social-medias"></p> -->
+
+        <p class="footer_text" >Copyright © Your Name · 2023</p>
+        <div>
+          <img src="./img/linkedinin.png" alt="linkedinin" class="header_socialmedias-icon" />
+          <img src="./img/githubgit.png" alt="githubgit" class="header_socialmedias-icon" />
+          <img src="./img/behance-be.png" alt="behance" class="header_socialmedias-icon" />
+        </div>
+      </footer>
+    
   </body>
 </html>
