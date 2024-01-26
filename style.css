@@ -951,7 +951,9 @@ a:visited {
 }
 
 .career-title_text {
-  margin: 140px auto 24px;
+  /* margin: 140px auto 24px; */
+  margin-left: auto;
+  margin-right: auto;
   font-family: Raleway;
   font-size: 20px;
   font-weight: 700;
@@ -1352,11 +1354,12 @@ a:visited {
 @media screen and (max-width: 768px) {
   body {
     width: auto;
+    overflow-x:hidden;
   }
 
   .container {
     max-width: auto;
-
+padding: 30px;
     display: grid;
     grid-template-columns: 1fr;
     justify-items: start;
@@ -1392,6 +1395,8 @@ a:visited {
   .header {
     display: flex;
     flex-direction: column;
+    flex-flow:column-reverse;
+  margin-bottom: 0;
   }
 
   .menu-text {
@@ -1413,15 +1418,21 @@ a:visited {
     right: 0px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    height: auto;
+    flex-flow :nowrap;
+    align-items: flex-start;
+    height: 700px;
     width: auto;
+    border:none;
+    margin: 0px 0px;
+    margin-left: 50px;
+    margin-top: 50px;
+    /* margin-bottom: 69px; */
   }
   .experience-cards {
     position: relative;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 100px;
+   margin-right: 0;
+   margin: 0px 0px;
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -1433,7 +1444,7 @@ a:visited {
   }
 
   .experience-description {
-    display: flex;
+    display: none;
     flex-wrap: wrap;
     justify-content: space-between;
     width: 898px;
@@ -1446,10 +1457,25 @@ a:visited {
   .about {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: space-between;
     margin-top: 50px;
   }
+
+
+.about-me_text {
+ 
+  margin-top: 46px;
+
+}
+
+.header_avatar{
+  width: 201px;
+  height: 217px;
+}
+
+.header-developer{
+  width: 330px;
+}
 
   .portfólio-title {
     display: flex;
@@ -1501,9 +1527,55 @@ a:visited {
     flex-wrap: nowrap;
     height: 499px;
     justify-content: start;
-    align-items: center;
+    align-items: start;
     overflow: auto;
     margin-bottom: 100px;
+  }
+
+  .career-title_text {
+    /* margin: 0; */
+    margin-left: 200px;
+    font-family: Raleway;
+    font-size: 20px;
+    font-weight: 700;
+    /* line-height: 23px; */
+    letter-spacing: 0em;
+    text-align: center;
+    color: #7b4ae2;
+    background-color: #7b4ae21a;
+    width: 130px;
+    height: 30px;
+    border-radius: 14px;
+    padding: 7px;
+    line-height: 30px;
+  }
+
+  .career-title_h2 {
+    width: 463px;
+    height: 60px;
+    top: 5184px;
+    left: 628px;
+    font-family: Raleway;
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 56px;
+    letter-spacing: 0em;
+    text-align: center;
+    margin-top: 24px;
+  }
+
+  .career-professional_p {
+    width: 619.67px;
+  }
+
+  .career-professional {
+    width: 620px;
+  
+  }
+
+  .career-title {
+    margin-left: 60px;
+    max-width: 663px;
   }
 
   .recomendations-title_flex {
@@ -1570,6 +1642,23 @@ a:visited {
 
   .skills-img_margin {
     margin-right: 30px;
+  }
+
+
+  .skills-text-h2 {
+    width: 463px;
+    height: 60px;
+    top: 4461px;
+    left: 628px;
+    font-family: Raleway;
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 56px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 24px;
+    margin-bottom: 0;
   }
 
   /* ----------------- */
