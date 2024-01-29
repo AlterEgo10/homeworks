@@ -618,7 +618,7 @@ a:visited {
   font-weight: 400;
   line-height: 23px;
   letter-spacing: 0em;
-  text-align: justified;
+  text-align: justify;
   width: 528.52px;
   height: 37px;
   top: 3761.24px;
@@ -1354,12 +1354,12 @@ a:visited {
 @media screen and (max-width: 768px) {
   body {
     width: auto;
-    overflow-x:hidden;
+    overflow-x: hidden;
   }
 
   .container {
-    max-width: auto;
-padding: 30px;
+    width: auto;
+    padding: 30px;
     display: grid;
     grid-template-columns: 1fr;
     justify-items: start;
@@ -1395,8 +1395,8 @@ padding: 30px;
   .header {
     display: flex;
     flex-direction: column;
-    flex-flow:column-reverse;
-  margin-bottom: 0;
+    flex-flow: column-reverse;
+    margin-bottom: 0;
   }
 
   .menu-text {
@@ -1418,11 +1418,11 @@ padding: 30px;
     right: 0px;
     display: flex;
     flex-direction: column;
-    flex-flow :nowrap;
+    flex-flow: nowrap;
     align-items: flex-start;
     height: 700px;
     width: auto;
-    border:none;
+    border: none;
     margin: 0px 0px;
     margin-left: 50px;
     margin-top: 50px;
@@ -1431,8 +1431,8 @@ padding: 30px;
   .experience-cards {
     position: relative;
     margin-left: 100px;
-   margin-right: 0;
-   margin: 0px 0px;
+    margin-right: 0;
+    margin: 0px 0px;
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -1461,21 +1461,18 @@ padding: 30px;
     margin-top: 50px;
   }
 
+  .about-me_text {
+    margin-top: 46px;
+  }
 
-.about-me_text {
- 
-  margin-top: 46px;
+  .header_avatar {
+    width: 201px;
+    height: 217px;
+  }
 
-}
-
-.header_avatar{
-  width: 201px;
-  height: 217px;
-}
-
-.header-developer{
-  width: 330px;
-}
+  .header-developer {
+    width: 330px;
+  }
 
   .portfólio-title {
     display: flex;
@@ -1570,7 +1567,6 @@ padding: 30px;
 
   .career-professional {
     width: 620px;
-  
   }
 
   .career-title {
@@ -1644,7 +1640,6 @@ padding: 30px;
     margin-right: 30px;
   }
 
-
   .skills-text-h2 {
     width: 463px;
     height: 60px;
@@ -1715,6 +1710,10 @@ padding: 30px;
     box-shadow: 1px 1px 5px 0px;
     position: sticky;
     top: 0;
+  }
+
+  .header_flex-card {
+    position: fixed;
   }
 
   .lines-container {
