@@ -141,13 +141,13 @@
       }
 
       function deleteProject(id) {
-        fetch(`http://localhost:3000/api/projects/?id=${id}`, {
+        fetch(`http://localhost:3000/api/projects/${id}`, {
           method: "DELETE",
         });
       }
 
       function updateProject(item, method, container) {
-        fetch(`http://localhost:3000/api/projects/?id=${item.id}`, {
+        fetch(`http://localhost:3000/api/projects/${item.id}`, {
           method: method,
           body: JSON.stringify(item),
           headers: {
