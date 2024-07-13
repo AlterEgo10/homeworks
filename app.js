@@ -4,6 +4,12 @@ const app = express();
 const fs = require("fs").promises;
 const { v4: uuidv4 } = require("uuid");
 const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
+const mongoDBConnectionString =
+  "mongodb://root:1234@localhost:27017/app?authSource=admin";
+mongoose.set("strictQuery", false);
+
+const Project = require("./models/project");
 
 app.use(express.json());
 app.use(express.static(path.resolve("public")));
@@ -17,118 +23,106 @@ const projects = [
   { id: "5", name: "Valery", title: "Node.js" },
 ];
 
-app.get("/", function (req, res) {
-  // express.static(path.resolve('public')));
-  //res.send('Hello SWorld')
-  //  res.status(200);
-  //  res.json({test: 'es'})
-  fs.readFile(path.join(__dirname, "index.html")) //"public"
-    .then((contents) => {
-      res.setHeader("Content-Type", "text/html");
-      //res.writeHead(200);
-      res.status(200);
-      res.end(contents);
-    })
-    .catch((error) => {
-      res.writeHead(500);
-      res.end(error);
-      return;
-    });
-});
-
-app.get("/api/projects", (req, res) => {
+app.get("/api/projects", async (req, res) => {
   //console.log(req.query.id);
-
+  const projects = await Project.find();
   res.json(projects);
 });
 
-app.post("/api/projects", function (req, res) {
-  // console.log(req.body);
-  //res.send('Hello World')
-  if (req.body && req.body.title) {
-    const item = {
-      id: uuidv4(),
-      name: req.name,
-      title: req.body.title,
-    };
-    projects.push(item);
-    res.json({ result: true, ...item });
+app.get("/api/projects/:id", async (req, res) => {
+  //console.log(req.query.id);
+  const project = await Project.findById(req.params.id);
+  if (project) {
+    await project.save();
+    res.json(project);
     return;
   }
-  res.json({ result: false });
-  //  res.status(200);
-  // res.json({test: 'POST'})
+  res.status(400);
+  res.end();
 });
 
-app.put("/api/projects/:id", function (req, res) {
-  // console.log(req.body);
-  //res.send('Hello World')
-  if (req.body && req.body.title) {
-    if (isProjectExists(projects, req.params.id)) {
-      const index = getProjectIndex(projects, req.params.id);
-      if (index !== -1) {
-        projects[index] = {
-          id: req.params.id,
-          ...req.body,
-        };
-      }
+app.post("/api/projects", async function (req, res) {
+  try {
+    const project = new Project(req.body);
+    if (await project.save()) {
+      res.json({ result: true, ...project.toObject });
+    } else {
+      throw new Error("Не удалось сохранить проект в БД.");
+    }
+  } catch (err) {
+    console.log(err);
+    res.json({ result: "false" });
+  }
+
+});
+
+app.put("/api/projects/:id", async function (req, res) {
+  try {
+    const project = await Project.findByIdAndUpdate(req.params.id, req.body, {
+      upsert: true,
+      overwrite: true,
+      runValidators: true,
+    });
+    if (project && project.isNew === false) {
       res.status(204);
       res.end();
       return;
     } else {
-      const item = {
-        id: uuidv4(),
-        name: req.name,
-        title: req.body.title,
-      };
-
-      projects.push(item);
-      res.setHeader("Location", `/api/projects/${item.id}`);
+      res.setHeader("Location", `/api/projects/${req.params.id}`);
       res.status(201);
       res.end();
       return;
     }
+  } catch (err) {
+    // console.log(err);
+    res.status(400);
+    res.end();
+    return;
   }
-  res.status(400);
-  res.end();
 });
 
-app.patch("/api/projects/:id", function (req, res) {
-  if (req.body && req.body.title) {
-    if (isProjectExists(projects, req.params.id)) {
-      const index = getProjectIndex(projects, req.params.id);
-      if (index !== -1) {
-        projects[index] = {
-          ...projects[index],
-          ...req.body,
-          id: req.params.id,
-        };
-      }
+app.patch("/api/projects/:id", async function (req, res) {
+  try {
+    const project = await Project.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+      runValidators: true,
+    });
+    if (project) {
       res.status(200);
-      res.json(projects[index]);
+      res.json(project);
       return;
-    } 
-  }
-  res.status(400);
-  res.end();
-});
-
-app.delete("/:id", function (req, res) {
-  const index = getProjectIndex(projects, req.params.id);
-  if (index !== -1) {
-    projects.splice(index, 1);
-    res.status(204);
+    }
+  } catch (err) {
+    // console.log(err);
+    res.status(400);
     res.end();
     return;
   }
   res.status(400);
   res.end();
+  return;
+  // if (req.body && req.body.title) {
+  //   if (isProjectExists(projects, req.params.id)) {
+  //     const index = getProjectIndex(projects, req.params.id);
+  //     if (index !== -1) {
+  //       projects[index] = {
+  //         ...projects[index],
+  //         ...req.body,
+  //         id: req.params.id,
+  //       };
+  //     }
+  //     res.status(200);
+  //     res.json(projects[index]);
+  //     return;
+  //   }
+  // }
+  // res.status(400);
+  // res.end();
 });
 
-app.delete("/:id", function (req, res) {
-  const index = getProjectIndex(projects, req.params.id);
-  if (index !== -1) {
-    projects.splice(index, 1);
+app.delete("/:id", async function (req, res) {
+  const project = await Project.findByIdAndDelete(req.params.id);
+  if (project) {
     res.status(204);
     res.end();
     return;
@@ -148,15 +142,35 @@ app.use((err, req, res, next) => {
   res.send("Сервер недоступен");
 });
 
-app.listen(3000, () => {
-  console.log(`http://localhost:3000/`);
+const start = async () => {
+  try {
+    await mongoose.connect(mongoDBConnectionString).then(() => {
+      console.log("MongoDB.Успешное соединение");
+    });
+    app.listen(3000, () => {
+      console.log(`http://localhost:3000/`);
+    });
+  } catch (err) {
+    console.log("MongoDB.Ошибка соединение");
+    console.error(err);
+    process.exit(1);
+  }
+};
+
+start();
+
+//Ctr-c
+process.on("SIGINT", async () => {
+  await mongoose.disconnect();
+  console.log("Приложение завершило работу");
+  process.exit(0);
 });
 
 function getProjectIndex(projects, id) {
   return projects.map((item) => item.id).indexOf(id);
 }
 
-function isProjectExists(projects, id){
+function isProjectExists(projects, id) {
   const index = getProjectIndex(projects, id);
   return index !== -1;
 }

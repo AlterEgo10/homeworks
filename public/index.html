@@ -108,9 +108,9 @@
                 1 +
                 ". " +
                 data[i].title +
-                ` <span class="delete-project" data-id="${data[i].id}">Удалить</span> | 
-          <span class="edit-project-put" data-id="${data[i].id}" data-name="${data[i].name}" data-title="${data[i].title}">Редактировать (PUT)</span> | 
-          <span class="edit-project-patch" data-id="${data[i].id}" data-name="${data[i].name}" data-title="${data[i].title}">Редактировать (PATCH)</span>`;
+                ` <span class="delete-project" data-id="${data[i]._id}">Удалить</span> | 
+          <span class="edit-project-put" data-id="${data[i]._id}" data-name="${data[i].name}" data-title="${data[i].title}">Редактировать (PUT)</span> | 
+          <span class="edit-project-patch" data-id="${data[i]._id}" data-name="${data[i].name}" data-title="${data[i].title}">Редактировать (PATCH)</span>`;
               container.appendChild(item);
             }
           });
