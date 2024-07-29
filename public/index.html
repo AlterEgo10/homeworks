@@ -11,6 +11,7 @@
     <!-- <link rel="stylesheet" href="./media-mobil.css" media="screen and (max-width:768px);"/> -->
     <title>HTML/CSS-English</title>
     <script>
+      isAuth();
       document.addEventListener("DOMContentLoaded", () => {
         const container = document.querySelector(".container");
         const form = document.getElementById("form");
@@ -97,6 +98,7 @@
       function fetchProjects(container) {
         fetch("http://localhost:3000/api/projects", {
           method: "GET",
+          headers:  getHeaders(),
         })
           .then((data) => data.json())
           .then((data) => {
@@ -124,9 +126,7 @@
         fetch("http://localhost:3000/api/projects", {
           method: "POST",
           body: JSON.stringify({ title: title }),
-          headers: {
-            "Content-Type": "application/json",
-          },
+          headers:  getHeaders(),
         })
           .then((data) => data.json())
           .then((data) => {
@@ -143,6 +143,7 @@
       function deleteProject(id) {
         fetch(`http://localhost:3000/api/projects/${id}`, {
           method: "DELETE",
+          headers:  getHeaders(),
         });
       }
 
@@ -150,9 +151,7 @@
         fetch(`http://localhost:3000/api/projects/${item.id}`, {
           method: method,
           body: JSON.stringify(item),
-          headers: {
-            "Content-Type": "application/json",
-          },
+          headers:  getHeaders(),
         })
           .then((res) => {
             if (res.status === 204) {
@@ -188,6 +187,22 @@
               editFormContainer.classList.toggle(className);
           }
         }
+      }
+
+      function getHeaders(){
+        const headers = new Headers();
+        headers.append("Content-Type", "application/json")
+        if(localStorage.getItem('token')){
+          headers.append("Authorization", `Bearer ${localStorage.getItem('token')}`)
+        }
+        return headers;
+      }
+      function isAuth(){
+        if(!localStorage.getItem('token')){
+         alert('Необходимо авторизоваться для просмотра');
+         window.location.href = '/login.html';
+        }
+        return true;
       }
     </script>
   </head>
@@ -326,6 +341,7 @@
       <!-- start project-title -->
 
       <!-- start projectAPI -->
+       <div class="container-main">
       <h1 class="h1API">Список технологий и языков программирования</h1>
       <div class="container"></div>
       <div class="edit-form-container">
@@ -362,8 +378,7 @@
             />
           </div>
         </form>
-      
-  
+      </div>
       <form class="form" id="form" method="post" action="/api/projects">
         <div class="form-row">
           <input
@@ -376,7 +391,11 @@
           <input type="submit" value="Создать проект" />
         </div>
       </form>
+      <ul class="container-links">
+        <li><a href="/logout.html">Выход</a></li>
+      </ul>
     </div>
+  </div>
 <!-- end projectAPI -->
 
       <figure class="project-title">

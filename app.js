@@ -1,9 +1,15 @@
 const express = require("express");
 const path = require("path");
 const app = express();
+//const passport = require('./middleware/passportMiddleware');
 const fs = require("fs").promises;
 const { v4: uuidv4 } = require("uuid");
+require('dotenv').config();
 const bodyParser = require("body-parser");
+const routerProjects = require('./routes/projects');
+const routerAuth = require("./routes/auth");
+const authMiddleware = require('./middleware/authMiddleware');
+
 const mongoose = require("mongoose");
 const mongoDBConnectionString =
   "mongodb://root:1234@localhost:27017/app?authSource=admin";
@@ -14,6 +20,13 @@ const Project = require("./models/project");
 app.use(express.json());
 app.use(express.static(path.resolve("public")));
 app.use(bodyParser.urlencoded({ extended: false, limit: "1mb" }));
+app.use('/projects', routerAuth);
+app.use('/api/projects', authMiddleware, routerProjects);
+app.use('/api/auth', routerAuth);
+//app.use('/api/projects', passport.authenticate('jwt', { session: false}), routerProjects);
+app.use('/api/auth', routerAuth);
+app.use("/img", express.static(path.resolve("img")));
+//app.use(passport.initialize());
 
 const projects = [
   { id: "1", name: "Valery", title: "GIT" },
@@ -23,8 +36,9 @@ const projects = [
   { id: "5", name: "Valery", title: "Node.js" },
 ];
 
-app.get("/api/projects", async (req, res) => {
+app.get("/api/projects" ,async (req, res) => {
   //console.log(req.query.id);
+
   const projects = await Project.find();
   res.json(projects);
 });

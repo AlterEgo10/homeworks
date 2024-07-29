@@ -19,6 +19,11 @@ html {
 
 /* <!-- start projectAPI --> */
 
+.container-main{
+  width: 800px;
+  margin: 0 auto;
+}
+
 .container {
   max-width: 1608px;
   margin: 0 auto;
@@ -33,6 +38,37 @@ html {
 .form, .delete-project{
   color: #ffffff;
 }
+
+/* <!-- end projectAPI --> */
+/* start Auch */
+
+.container-auth{
+  width: 400px;
+  margin: 0 auto;
+}
+
+.form-auth{
+  width: 100%;
+}
+
+.container-links{
+  list-style-type: none;
+  font-style: 1.2em;
+  padding-left: 10px;
+}
+
+.container-links li{
+  margin-bottom: 10px;
+}
+
+.container-links a{
+ color: brown;
+}
+
+.container-links a:hover{
+  text-decoration: none;
+}
+/* end Auch */
 /* <!-- end projectAPI --> */
 /* start nav */
 
