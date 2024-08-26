@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="./normalize.css" />
     <link rel="stylesheet" href="./font/raleway.css" />
     <link rel="stylesheet" href="./helper.css" />
-    <!-- <link rel="stylesheet" href="./media-mobil.css" media="screen and (max-width:768px);"/> -->
     <title>HTML/CSS-English</title>
     <script>
       isAuth();
@@ -17,6 +16,11 @@
         const form = document.getElementById("form");
         const editFormContainer = document.querySelector(
           ".edit-form-container"
+        );
+        const containerComment = document.querySelector(".container-comment")
+        const formComment = document.getElementById("form-comment");
+        const editFormContainerComment = document.querySelector(
+          ".edit-form-container-comment"
         );
 
         if (editFormContainer) {
@@ -36,15 +40,14 @@
               const item = { id, name, title };
 
               updateProject(item, method, container);
-            }
-          );
-
-          editFormContainer
+            });
+      
+                            editFormContainer
             .querySelector(".form-btn-reset")
             .addEventListener("click", () => {
               hideShowEditFormContainer("add");
             });
-        }
+      }
 
         if (container) {
           fetchProjects(container);
@@ -54,7 +57,6 @@
 
             if (target.tagName != "SPAN") return;
             if (target.classList.contains("delete-project")) {
-              // console.log(target);
               target.parentElement.remove();
               deleteProject(target.dataset.id);
             }
@@ -93,7 +95,83 @@
             createNewProject(title, container);
           });
         }
+      
+// start apiCommentDOM formComment
+
+if(editFormContainerComment){
+  hideShowEditFormContainerComments();
+//}
+
+editFormContainerComment.firstElementChild.addEventListener(
+            "submit",
+            (event) => {
+              event.preventDefault();
+              const target = event.target;
+              const method = target.getAttribute("method").toUpperCase();
+
+               const id = target.querySelector(".form-input-id-comment").value;
+              const name = target.querySelector(".form-input-name-comment").value;
+
+              const title = target.querySelector(".form-edit-title-comment").value;
+
+              const item = { id, name, title };
+
+              updateComment(item, method, containerComment);
+            });
+
+            editFormContainerComment
+            .querySelector(".form-btn-reset")
+            .addEventListener("click", () => {
+              hideShowEditFormContainerComments("add");
+            });
+
+          }
+
+          if (containerComment) {
+            fetchComments(containerComment);
+
+containerComment.addEventListener("click", (event) => {
+            let target = event.target;
+            if (target.tagName != "SPAN") return;
+            if (target.classList.contains("delete-comment")) {
+               
+              target.parentElement.remove();
+              deleteComment(target.dataset.id);
+            }
+
+            if(containerComment && target.classList.contains('edit-comment-patch')){
+            const method = 'patch';
+            
+
+            const id = editFormContainerComment.querySelector('.form-input-id-comment');
+            
+           
+             editFormContainerComment.querySelector('.form-input-name-comment').value = target.dataset.name;
+
+             editFormContainerComment.querySelector('.form-edit-title-comment').value = target.dataset.title;
+            editFormContainerComment.firstElementChild.setAttribute(
+                "method",
+                method
+                );
+                hideShowEditFormContainerComments("remove");
+          } 
+          })
+        }
+
+        if (formComment) {
+  formComment.addEventListener("submit", (event) => {
+            event.preventDefault();
+            const title = event.target.querySelector(
+              ".form-input-title-comment"
+            ).value;
+            createNewComment(title, containerComment);
+          });
+        }
+
+
+    // end apiCommentDOM
       });
+    
 
       function fetchProjects(container) {
         fetch("http://localhost:3000/api/projects", {
@@ -102,13 +180,12 @@
         })
           .then((data) => data.json())
           .then((data) => {
-            // console.log(data);
             for (let i = 0; i < data.length; i++) {
               let item = document.createElement("div");
               item.innerHTML =
                 i +
                 1 +
-                ". " +
+                ". " + 
                 data[i].title +
                 ` <span class="delete-project" data-id="${data[i]._id}">Удалить</span> | 
           <span class="edit-project-put" data-id="${data[i]._id}" data-name="${data[i].name}" data-title="${data[i].title}">Редактировать (PUT)</span> | 
@@ -130,7 +207,6 @@
         })
           .then((data) => data.json())
           .then((data) => {
-            // console.log(data);
             if (data && data.result) {
               clearListOfProjects(container);
               fetchProjects(container);
@@ -163,7 +239,6 @@
             return res.json();
           })
           .then((data) => {
-            console.log(data);
             clearListOfProjects(container);
             fetchProjects(container);
             hideShowEditFormContainer();
@@ -197,6 +272,7 @@
         }
         return headers;
       }
+
       function isAuth(){
         if(!localStorage.getItem('token')){
          alert('Необходимо авторизоваться для просмотра');
@@ -204,6 +280,103 @@
         }
         return true;
       }
+
+      // start apiComment
+        
+          function fetchComments(container) {
+        fetch("http://localhost:3000/api/comments", {
+          method: "GET",
+          headers:  getHeaders(),
+        })
+          .then((data) => data.json())
+          .then((data) => { 
+            console.log(data);
+            for (let i = 0; i < data.length; i++) {
+              let item = document.createElement("div");
+              item.innerHTML =
+                i +
+                1 +
+                ". " + data[i].name + ": " +
+                data[i].title +
+                ` <span class="delete-comment" data-id="${data[i]._id}">Удалить</span> |  
+          <span class="edit-comment-patch" data-id="${data[i]._id}" data-name="${data[i].name}" data-title="${data[i].title}">Редактировать </span>`;
+                container.appendChild(item);
+           }
+          });
+     }
+
+     function clearListOfProjectsComments(container) {
+      container.textContent = "";
+      }
+
+      function createNewComment(title, container) {
+        fetch("http://localhost:3000/api/comments", {
+          method: "POST",
+          body: JSON.stringify({ title: title }),
+          headers:  getHeaders(),
+        })
+          .then((data) => data.json())
+          .then((data) => {
+            // console.log(data);
+            if (data && data.result) {
+              clearListOfProjects(container);
+              fetchComments(container);
+            } else {
+              alert("Проект не был добавлен!");
+            }
+          });
+      }
+
+
+      function deleteComment(id) {
+        fetch(`http://localhost:3000/api/comments/${id}`, {
+          method: "DELETE",
+          headers:  getHeaders(),
+        });
+      }
+
+      function updateComment(item, method, container) {
+        fetch(`http://localhost:3000/api/comments/${item.id}`, {
+          method: method,
+          body: JSON.stringify(item),
+          headers:  getHeaders(),
+        })
+          .then((res) => {
+            if (res.status === 204) {
+              return "204";
+            }
+            if (res.status === 201) {
+              return res.headers.get("Location");
+            }
+            return res.json();
+          })
+          .then((data) => {
+           clearListOfProjectsComments(container);
+            fetchComments(container);
+           hideShowEditFormContainerComments();
+          });
+      }
+
+      function hideShowEditFormContainerComments(action = "toggle") {
+        const editFormContainerComment = document.querySelector(
+          ".edit-form-container-comment"
+        );
+        const className = "edit-form-container-hidden";
+        if (editFormContainerComment) {
+          switch (action) {
+            case "add":
+            editFormContainerComment.classList.add(className);
+              break;
+            case "remove":
+            editFormContainerComment.classList.remove(className);
+              break;
+            default:
+            editFormContainerComment.classList.toggle(className);
+          }
+        }
+      }
+ 
+        //end apiComment
     </script>
   </head>
   <body>
@@ -785,7 +958,6 @@
 <p class="contacts-text">📬 Contacts</p>
 <h3 class="contacts-text_h3">Let's talk!</h3>
 
-<!-- <p class="contacts-text_whatsapp"><img src="./img/whatsapplogo.png" alt="WhatsApp" class="contacts-text_img-whatsapp" > WhatsApp</p> -->
 <div class="contacts-text_contacts-container">
   <p class="contacts-text_whatsapp"><img src="./img/whatsapplogo.png" alt="WhatsApp" class="contacts-text_img-whatsapp" > WhatsApp</p>
   <div class="contacts-text_contacts">
@@ -796,13 +968,58 @@
 </div>
 </div>
 <a class="contacts-text_contacts-back" href="#header">Back to the top <img src="./img/arrow-up.png" alt="arrow-up" class="contacts-text_contacts-back-img"> </a>
-
-
 </section>
+
+      <!-- start commentAPI -->
+      <div class="container-main">
+        <h1 class="h1API">Комментарии</h1>
+        <div class="container-comment-flex">
+        <div class="container-comment"></div>
+        <div class="edit-form-container-comment">
+          <form class="form" id="form-edit" method="patch" action="#">
+            <div class="form-row">
+              <input class="form-btn-save" type="submit" value="Сохранить" />
+            </div> 
+            <div class="form-row">
+              <input
+                type="button"
+                class="form-btn-reset"
+                value="Отменить редактирование"
+              />
+            </div>
+              <div class="form-row">
+                <input   type="text"
+           class="form-input-name-comment"
+           placeholder="">
+              </div>         
+            <div class="form-row">
+              <input   type="text"
+         class="form-edit-title-comment"
+         placeholder="">
+            </div>
+            </div>
+          </form>
+        </div>
+          <form class="form-comment" id="form-comment" method="post" action="/api/comments">
+            <div class="form-row">
+              <textarea type="text"
+              class="form-input-title-comment"
+              placeholder="Напишите комментарий"></textarea>
+            </div>
+            <div class="form-comment">
+              <input type="submit" value="Создать комментарий" />
+            </div>
+          
+          </form>
+        </div>
+      <!-- </div> -->
+    </div>
+  <!-- end commentAPI -->
+
 <!-- end contacts -->
 </div>
       <footer class="footer">
-        <!-- <p class="footer_text" >Copyright © Your Name · 2023 <img src="./img/social-medias.png" alt="social-medias" class="footer_social-medias"></p> -->
+      
 
         <p class="footer_text" >Copyright © Your Name · 2023</p>
         <div>

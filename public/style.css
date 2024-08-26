@@ -39,7 +39,39 @@ html {
   color: #ffffff;
 }
 
+.delete-project,
+.edit-project-put,
+.edit-project-patch{
+  color: rgb(67, 67, 247);
+  cursor: pointer;
+}
+
+.edit-form-container-hidden{
+display: none;
+}
+
 /* <!-- end projectAPI --> */
+/* start apiComment */
+.container-comment,
+.form-comment{
+  color: #ffffff;
+  width: 800px;
+  margin: 0 auto;
+}
+
+.delete-comment,
+.edit-comment-patch{
+  color: rgb(67, 67, 247);;
+  cursor: pointer;
+}
+
+.container-comment-flex{
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20px;
+}
+
+/* end apiComment */
 /* start Auch */
 
 .container-auth{
@@ -69,7 +101,7 @@ html {
   text-decoration: none;
 }
 /* end Auch */
-/* <!-- end projectAPI --> */
+
 /* start nav */
 
 .menu-checkbox {
