@@ -2,7 +2,6 @@ const express = require("express");
 const path = require("path");
 const app = express();
 
-//const fs = require("fs").promises;
 require("dotenv").config();
 const bodyParser = require("body-parser");
 const routerProjects = require("./routes/projects");
@@ -11,9 +10,8 @@ const routerAuth = require("./routes/auth");
 const authMiddleware = require("./middleware/authMiddleware");
 
 const mongoose = require("mongoose");
-const mongoDBConnectionString =
-  "mongodb://root:1234@localhost:27017/app?authSource=admin";
- mongoose.set("strictQuery", false);
+const mongoDBConnectionString = process.env.MONGO_DB_URL;
+mongoose.set("strictQuery", false);
 
 app.use(express.json());
 app.use(express.static(path.resolve("public")));
@@ -25,7 +23,7 @@ app.use("/api/auth", routerAuth);
 app.use("/img", express.static(path.resolve("img")));
 app.use("/font", express.static(path.resolve("font")));
 app.use((err, req, res, next) => {
-  console.log(err.stack);
+  //console.log(err.stack);
   res.status(500);
   res.send("Сервер недоступен");
 });

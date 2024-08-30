@@ -17,7 +17,6 @@ router.post("/registration", async function (req, res) {
       throw new Error("Пользователь с таким e-mail уже существует");
     }
   } catch (err) {
-    //console.log(err);
     let message = err.message;
     if(err.code === 11000){
       message = "Пользователь  с таким e-mail уже существует"

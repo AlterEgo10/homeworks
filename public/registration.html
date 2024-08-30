@@ -42,7 +42,6 @@
             })
               .then((data) => data.json())
               .then((data) => {
-                // console.log(data);
                 if (data && data.mesage) {
                   alert(data.message);
                 } else if (data && data.email) {

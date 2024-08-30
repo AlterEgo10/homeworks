@@ -31,12 +31,10 @@
                 return data.json();
               })
               .then((data) => {
-                // console.log(data);&& data.token
                 if (data && data.token) {
                   localStorage.setItem("user", JSON.stringify);
                   localStorage.setItem("token", data.token);
                   window.location.href = "/";
-                  //alert(data.message);
                 } else {
                   alert("Неправильная пара e-mail/пароль");
                   localStorage.removeItem("user");
