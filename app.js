@@ -13,7 +13,7 @@ const authMiddleware = require("./middleware/authMiddleware");
 const mongoose = require("mongoose");
 const mongoDBConnectionString =
   "mongodb://root:1234@localhost:27017/app?authSource=admin";
-mongoose.set("strictQuery", false);
+ mongoose.set("strictQuery", false);
 
 app.use(express.json());
 app.use(express.static(path.resolve("public")));
