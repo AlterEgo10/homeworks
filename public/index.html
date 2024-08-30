@@ -144,11 +144,16 @@ containerComment.addEventListener("click", (event) => {
             
 
             const id = editFormContainerComment.querySelector('.form-input-id-comment');
-            
+            id.value = target.dataset.id;
+            id.disabled = method === "patch";
            
-             editFormContainerComment.querySelector('.form-input-name-comment').value = target.dataset.name;
+            const name = editFormContainerComment.querySelector('.form-input-name-comment');
+             name.value= target.dataset.name;
+            name.disabled = method === "patch";
 
-             editFormContainerComment.querySelector('.form-edit-title-comment').value = target.dataset.title;
+            editFormContainerComment.querySelector('.form-edit-title-comment').value = target.dataset.title;
+             
+
             editFormContainerComment.firstElementChild.setAttribute(
                 "method",
                 method
@@ -290,7 +295,6 @@ containerComment.addEventListener("click", (event) => {
         })
           .then((data) => data.json())
           .then((data) => { 
-            console.log(data);
             for (let i = 0; i < data.length; i++) {
               let item = document.createElement("div");
               item.innerHTML =
@@ -317,7 +321,6 @@ containerComment.addEventListener("click", (event) => {
         })
           .then((data) => data.json())
           .then((data) => {
-            // console.log(data);
             if (data && data.result) {
               clearListOfProjects(container);
               fetchComments(container);
@@ -351,7 +354,7 @@ containerComment.addEventListener("click", (event) => {
             return res.json();
           })
           .then((data) => {
-           clearListOfProjectsComments(container);
+            clearListOfProjectsComments(container);
             fetchComments(container);
            hideShowEditFormContainerComments();
           });
@@ -985,6 +988,13 @@ containerComment.addEventListener("click", (event) => {
                 type="button"
                 class="form-btn-reset"
                 value="Отменить редактирование"
+              />
+            </div>
+            <div class="form-row">
+              <input
+                type="text"
+                class="form-input-id-comment"
+                placeholder="Введите Id проекта"
               />
             </div>
               <div class="form-row">

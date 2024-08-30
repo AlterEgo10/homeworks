@@ -2,7 +2,7 @@ const express = require("express");
 const path = require("path");
 const app = express();
 
-const fs = require("fs").promises;
+//const fs = require("fs").promises;
 require("dotenv").config();
 const bodyParser = require("body-parser");
 const routerProjects = require("./routes/projects");
@@ -23,7 +23,7 @@ app.use("/api/projects", authMiddleware, routerProjects);
 app.use("/api/comments", routerComments);
 app.use("/api/auth", routerAuth);
 app.use("/img", express.static(path.resolve("img")));
-
+app.use("/font", express.static(path.resolve("font")));
 app.use((err, req, res, next) => {
   console.log(err.stack);
   res.status(500);
